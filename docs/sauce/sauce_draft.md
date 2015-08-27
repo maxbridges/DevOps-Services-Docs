@@ -5,14 +5,13 @@ You can integrate automated functional tests run on Sauce Labs into IBM Bluemix 
 In this article, a Node.js app is the test target, but the steps are generally the same for other supported languages. If you have a project that already includes Sauce Labs tests, you can configure your pipeline to integrate with Sauce Labs in just a few steps.
 
 ##Table of Contents
-* Prerequsites
-* Verify your Sauce Labs account information
-* Ensure that required components are included in your project
-  * Dependencies
-  * Tests
-* Configure the pipeline
-* Run and review the tests
+* [Prerequsites](#prereqs)
+* [Verify your Sauce Labs account information](#verify)
+* [Ensure that required components are included in your project](#ensure)
+* [Configure the pipeline](#config)
+* [Run and review the tests](#run)
 
+<a name="prereqs"></a>
 ##Prerequisites
 
 You'll need the following things to run Sauce Labs tests against a pipeline app:
@@ -30,7 +29,8 @@ You'll need the following things to run Sauce Labs tests against a pipeline app:
 * A Sauce Labs account
   * Sauce Labs offers 14-day free trials for new accounts. [Register for an account if you don't already have one][2].
   * If you want to learn how to use Sauce Labs, [see the official Sauce Labs documentation][1].
-  
+
+<a name="verify"></a>
 ##Verify your Sauce Labs account information
 
 You need to save a couple of pieces of information from your Sauce Labs account for use in the pipeline.
@@ -38,6 +38,7 @@ You need to save a couple of pieces of information from your Sauce Labs account 
 1. Locate and save your Sauce Labs username. [It's in the welcome message at the top of your Sauce Labs account page][3].
 2. Locate and save your Sauce Labs Access Key. [It's at the bottom left corner of your Sauce Labs account page][3].
 
+<a name="ensure"></a>
 ##Ensure that required components are included in your project
 
 ###Dependencies
@@ -68,6 +69,7 @@ Your Sauce Labs tests should be located in the subdirectory`/tests/sauce/`. As w
 
 One key difference between running Sauce Labs tests without the DevOps Services pipeline and with it is that you provide your Sauce Labs username and access key in the pipeline itself. These are externalized as the environment properties `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY`, respectively. You can refer to them in your test scripts. 
 
+<a name="config"></a>
 ##Configure the pipeline
 
 Configure a Sauce Labs test job in a pipeline:
@@ -90,6 +92,7 @@ Configure a Sauce Labs test job in a pipeline:
     * If you're testing a Node.js app, configure Mocha to use `mocha-jenkins-reporter` to generate correctly formatted xUnit output for the reporter. Standard JUnit     formatting will also work for Java.
 6. Click **SAVE**. 
 
+<a name="run"></a>
 ##Run the pipeline and review the tests
 
 Now, whenever your pipeline runs, your Sauce Labs tests will run, too.
