@@ -1,6 +1,6 @@
 #Integrate Sauce Labs Testing with DevOps Services
 
-You can integrate automated tests run on Sauce Labs into IBM Bluemix DevOps Services project pipelines. When configured as a test job in a pipeline, a Sauce Labs test suite can run Java or JavaScript tests against your web or mobile application as part of your continuous delivery process. These tests can provide valuable flow control for your projects, acting as gates to prevent the deployment of bad code.
+You can integrate automated functional tests run on Sauce Labs into IBM Bluemix DevOps Services project pipelines. When configured as a test job in a pipeline, a Sauce Labs test suite can run Java or JavaScript tests against your web or mobile application as part of your continuous delivery process. These tests can provide valuable flow control for your projects, acting as gates to prevent the deployment of bad code.
 
 In this article, a Node.js app is the test target, but the steps are generally the same for other supported languages. If you have a project that already includes Sauce Labs tests, you can configure your pipeline to integrate with Sauce Labs in just a few steps.
 
@@ -78,7 +78,7 @@ Configure a Sauce Labs test job in a pipeline:
 3. Configure the stage:
   1. In the **ENVIRONMENT PROPERTIES** tab, create two text properties: `CF_APP_NAME` and `TEST_URL`. Leave `CF_APP_NAME` empty. You can set `TEST_URL` to a known URL if you like. You can also set it elsewhere in this stage or in your tests.
 4. Configure the deploy job:
-  1. In the **Deploy Script** field, enter the command `export CF_APP_NAME="$CF_APP"`. This will export the app name as an environment property. 
+  1. In the **Deploy Script** field, include the command `export CF_APP_NAME="$CF_APP"`. This will export the app name as an environment property. 
 5. Configure the test job:
 ![A configured test job][10]
   1. Select **Sauce Labs** as the Tester Type.
