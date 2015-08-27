@@ -5,7 +5,7 @@ You can integrate automated functional tests run on Sauce Labs into IBM Bluemix 
 In this article, a Node.js app is the test target, but the steps are generally the same for other supported languages. If you have a project that already includes Sauce Labs tests, you can configure your pipeline to integrate with Sauce Labs in just a few steps.
 
 ##Table of Contents
-* [Prerequsites](#prereqs)
+* [Prerequisites](#prereqs)
 * [Verify your Sauce Labs account information](#verify)
 * [Ensure that required components are included in your project](#ensure)
 * [Configure the pipeline](#config)
