@@ -2,7 +2,7 @@
 
 You can integrate automated tests run on Sauce Labs into IBM Bluemix DevOps Services project pipelines. When configured as a test job in a pipeline, a Sauce Labs test suite can run Java or JavaScript tests against your web or mobile application as part of your continuous delivery process. These tests can provide valuable flow control for your projects, acting as gates to prevent the deployment of bad code.
 
-In this article(/tutorial/I'm really not sure what to call it yet), a Node.js app is the test target (maybe--trying to generalize a lot here), but the steps are generally the same for other supported languages. If you have a project that already includes Sauce Labs tests, you can configure your pipeline to integrate with Sauce Labs in just a few steps.
+In this article, a Node.js app is the test target, but the steps are generally the same for other supported languages. If you have a project that already includes Sauce Labs tests, you can configure your pipeline to integrate with Sauce Labs in just a few steps.
 
 ##Table of Contents
 * Prerequsites
@@ -18,17 +18,18 @@ In this article(/tutorial/I'm really not sure what to call it yet), a Node.js ap
 You'll need the following things to run Sauce Labs tests against a pipeline app:
 
 * A working pipeline with stages to build and deploy your app
-  * Want to learn the basics of configuring a DevOps Services pipeline? [See this tutorial][].
-  * Need to sign up for IBM Bluemix? [Register today!][]
+  * Want to learn the basics of configuring a DevOps Services pipeline? [See this tutorial][8].
+  * Need to sign up for IBM Bluemix and DevOps Services? [Register today][9]!
 * A project that includes tests to run on Sauce Labs, e.g. Selenium browser tests
 * Dependencies needed to run those tests
   * For example, a Node.js project might require:
-    * [Grunt][], a task runner for JavaScript
-    * [Mocha][], a test framework for Node.js and web browsers
-    * [WebDriver.js][], a Node.js and browser webdriver for Selenium
-    * [The Sauce Labs REST API wrapper][]
+    * [Grunt][4], a task runner for JavaScript
+    * [Mocha][5], a test framework for Node.js and web browsers
+    * [WebDriver.js][6], a Node.js and browser webdriver for Selenium
+    * [The Sauce Labs REST API wrapper][7]
 * A Sauce Labs account
-  * Sauce Labs offers 14-day free trials for new accounts. [Register for an account if you don't already have one.][2]
+  * Sauce Labs offers 14-day free trials for new accounts. [Register for an account if you don't already have one][2].
+  * If you want to learn how to use Sauce Labs, [see the official Sauce Labs documentation][1].
   
 ##Verify your Sauce Labs account information
 
@@ -102,9 +103,12 @@ Now, whenever your pipeline runs, your Sauce Labs tests will run, too.
 [1]: https://docs.saucelabs.com/
 [2]: https://saucelabs.com
 [3]: https://saucelabs.com/account
-[4]: #
-[5]: #
-[6]: #
+[4]: http://gruntjs.com/
+[5]: http://mochajs.org/
+[6]: http://admc.io/wd/
+[7]: https://www.npmjs.com/package/saucelabs
+[8]: https://hub.jazz.net/tutorials/basicbuild
+[9]: https://login.jazz.net/psso/proxy/jazzregister?redirect_uri=https%3A%2F%2Fhub.jazz.net%2F
 [10]: images/test1.png
 [11]: images/deployandtest.png
 [12]: images/log1.png
