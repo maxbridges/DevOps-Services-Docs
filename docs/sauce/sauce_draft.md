@@ -65,32 +65,56 @@ To learn about required components for a variety of languages, [see the official
 
 ###Tests
 
-Your Sauce Labs tests should be located in the subdirectory`/tests/sauce/`. As with dependencies, these can be kept in your project's source control repository, or be installed when a job is run in the pipeline.
+Your Sauce Labs tests should be stored in an appropriate subdirectory; typically `/test/sauce/` for Node.js. As with dependencies, these can be kept in your project's source control repository, or be installed when a job is run in the pipeline.
 
-One key difference between running Sauce Labs tests without the DevOps Services pipeline and with it is that you provide your Sauce Labs username and access key in the pipeline itself. These are externalized as the environment properties `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY`, respectively. You can refer to them in your test scripts. 
+One key difference between running Sauce Labs tests without the DevOps Services pipeline and with it is that you provide your Sauce Labs username and access key in the pipeline itself. These are externalized as the environment properties `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY`, respectively. You will need to refer to them in your test scripts in order to connect to the Sauce Labs servers. 
 
 <a name="config"></a>
 ##Configure the pipeline
 
-Configure a Sauce Labs test job in a pipeline:
+<strong>Configure a Sauce Labs test job in a pipeline:</strong>
 
 1. If you don't already have a stage that deploys a test version of your app, create one. 
 2. Add a test job after the deploy job in that stage. By placing these jobs in the same stage, they'll have access to the same set of environment properties.
 ![A stage that deploys and tests][11]
 3. Configure the stage:
-  1. In the **ENVIRONMENT PROPERTIES** tab, create two text properties: `CF_APP_NAME` and `TEST_URL`. Leave `CF_APP_NAME` empty. You can set `TEST_URL` to a known URL if you like. You can also set it elsewhere in this stage or in your tests.
+  1. In the **ENVIRONMENT PROPERTIES** tab, create two text properties: `CF_APP_NAME` and `APP_URL`. Leave `CF_APP_NAME` empty. You can set `APP_URL` to a known URL if you like. You can also set it elsewhere in this stage or in your tests.
 4. Configure the deploy job:
-  1. In the **Deploy Script** field, include the command `export CF_APP_NAME="$CF_APP"`. This will export the app name as an environment property. 
+  1. In the **Deploy Script** field, include the command `export CF_APP_NAME="$CF_APP"`. This will export the app name as an environment property.
+![Deploy script with added code][14]   
 5. Configure the test job:
 ![A configured test job][10]
   1. Select **Sauce Labs** as the Tester Type.
   2. Enter your Bluemix **Target**, **Organization**, and **Space** information.
   3. Enter your Sauce Labs **Username** and **Access Key**. These are externalized as the environment properties `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY`, respectively, for use in your tests.
-  4. Select the **Test Execution Command** that best fits your project. For a hypothetical Node.js project, that would probably be **npm install**. 
+  4. Select the **Test Execution Command** that best fits your project. For a hypothetical Node.js project, that would probably be **npm test** or **grunt test**. 
   5. Choose whether or not to **Download Selenium logs and job videos** as artifacts. You can always access these on Sauce Labs, as well.
   6. Check the **Enable Test Report** box if you want to see your test reports in the test job logs.
-    * If you're testing a Node.js app, configure Mocha to use `mocha-jenkins-reporter` to generate correctly formatted xUnit output for the reporter. Standard JUnit     formatting will also work for Java.
-6. Click **SAVE**. 
+    * If you're testing a Node.js app, configure Mocha to use `mocha-jenkins-reporter` to generate correctly formatted xUnit output for the reporter. Standard JUnit formatting will also work for Java.
+6. Click **SAVE**.
+
+For a live example of this pipeline click the button below:
+
+[![Deploy To Bluemix](https://bluemix.net/deploy/button.png)](https://hub.jazz.net/deploy/index.html?repository=https://github.com/Puquios/sauce-labs_setup.git)
+ 
+<strong>Configure a Sauce Labs test job in a standalone stage:</strong>
+
+3. Configure the stage:
+  1. In the **ENVIRONMENT PROPERTIES** tab, create a new text property: `APP_URL`. Set `APP_URL` to the known URL.
+5. Configure the test job:
+![A configured test job][10]
+  1. Select **Sauce Labs** as the Tester Type.
+  2. Enter your Bluemix **Target**, **Organization**, and **Space** information.
+  3. Enter your Sauce Labs **Username** and **Access Key**. These are externalized as the environment properties `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY`, respectively, for use in your tests.
+  4. Select the **Test Execution Command** that best fits your project. For a hypothetical Node.js project, that would probably be **npm test** or **grunt test**. 
+  5. Choose whether or not to **Download Selenium logs and job videos** as artifacts. You can always access these on Sauce Labs, as well.
+  6. Check the **Enable Test Report** box if you want to see your test reports in the test job logs.
+    * If you're testing a Node.js app, configure Mocha to use `mocha-jenkins-reporter` to generate correctly formatted xUnit output for the reporter. Standard JUnit formatting will also work for Java.
+6. Click **SAVE**.
+
+For a live example of this pipeline click the button below:
+
+[![Deploy To Bluemix](https://bluemix.net/deploy/button.png)](https://hub.jazz.net/deploy/index.html?repository=https://github.com/eLobeto/exampleSauceApp.git)
 
 <a name="run"></a>
 ##Run the pipeline and review the tests
@@ -100,8 +124,11 @@ Now, whenever your pipeline runs, your Sauce Labs tests will run, too.
 1. Click the **Run Stage** icon to manually trigger your pipeline.
 2. When the test job completes, click on it to view its logs.
 ![A test log in DevOps Services][12]
-3. Alternatively, view your tests on Sauce Labs' site, too.
+3. Alternatively, view your tests on Sauce Labs' site by clicking the links provided in the logs.
 ![A test log on Sauce labs][13]
+
+**Note:** In a Node.js application using Mocha tests, each `describe(xxxx, function() { //tests here });` block will be treated as a single job on Sauce Labs. In order to have a single test considered as a single job ensure that each `describe()` block contains only one test.
+
 
 [1]: https://docs.saucelabs.com/
 [2]: https://saucelabs.com
@@ -116,3 +143,4 @@ Now, whenever your pipeline runs, your Sauce Labs tests will run, too.
 [11]: images/deployandtest.png
 [12]: images/log1.png
 [13]: images/log2.png
+[14]: images/deploycode.png
