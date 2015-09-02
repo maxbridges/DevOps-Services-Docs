@@ -95,7 +95,7 @@ One key difference between running Sauce Labs tests without the DevOps Services 
 
 For a live example of this pipeline click the button below:
 
-[![Deploy To Bluemix](https://bluemix.net/deploy/button.png)](https://hub.jazz.net/deploy/index.html?repository=https://github.com/Puquios/sauce-labs_setup.git)
+[![Deploy To Bluemix](https://bluemix.net/deploy/button.png)](https://hub.jazz.net/deploy/index.html?repository=https://github.com/eLobeto/sauceLabsExample.git)
  
 <strong>Configure a Sauce Labs test job in a standalone stage:</strong>
 
