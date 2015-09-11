@@ -28,7 +28,7 @@ You'll need the following things to integrate SpeedCurve tests into your DevOps 
 <a name="config"></a>
 ##Steps to configure
 
-To get up and running with SpeedCurve and DevOps Services as quickly as possible, add a dedicated SpeedCurve test job after an existing deploy job:
+To get up and running with SpeedCurve and DevOps Services as quickly as possible, add a dedicated SpeedCurve test job after an existing deploy job:<br>
 ![A deploy and test tile in a pipeline][10]
 
 1. On the Build & Deploy Overview page, click the Stage Configuration icon on the stage that contains the deployment job you want to test.
