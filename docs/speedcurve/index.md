@@ -29,14 +29,17 @@ You'll need the following things to integrate SpeedCurve tests into your DevOps 
 ##Steps to configure
 
 To get up and running with SpeedCurve and DevOps Services as quickly as possible, add a dedicated SpeedCurve test job after an existing deploy job:
+![A deploy and test tile in a pipeline][10]
 
 1. On the Build & Deploy Overview page, click the Stage Configuration icon on the stage that contains the deployment job you want to test.
 2. Click **JOBS**.
 3. Click *ADD JOB** and select **Test**. 
 4. Under Test Command, add this command: `curl "https://api.speedcurve.com/v1/deploy" -u [your-API-key-here]:x --request POST --data note="${CF_APP}-${BUILD_NUMBER}"`
   * The `--data note=="${CF_APP}-${BUILD_NUMBER}"` argument will add the app name and the test number to your SpeedCurve dashboard.
+![A configured test job][11]
 5. Click on the existing deploy job.
-6. Under **Deploy Script**, add the command `export CF_APP_NAME="$CF_APP"`. This externalizes the app name from the deploy job. 
+6. Under **Deploy Script**, add the command `export CF_APP_NAME="$CF_APP"`. This externalizes the app name from the deploy job.
+![A configured deploy job][14]
 7. Click the **ENVIRONMENT PROPERTIES** tab.
 8. Add a text property named `CF_APP_NAME`. This allows the exported app name from the deploy job to be used in the SpeedCurve test job.
 6. Click **SAVE**. 
@@ -48,7 +51,8 @@ To get up and running with SpeedCurve and DevOps Services as quickly as possible
 ##Validate integration with DevOps Services
 
 1. Run the pipeline.
-2. When the new SpeedCurve stage completes, open your SpeedCurve dashboard. You'll see that a new set of tests have been requested.  
+2. When the new SpeedCurve stage completes, open your SpeedCurve dashboard. You'll see that a new set of tests have been requested.
+![Part of a SpeedCurve performance report][13]
 
 
 <!--{{/template}}-->
@@ -62,3 +66,8 @@ To get up and running with SpeedCurve and DevOps Services as quickly as possible
 [7]: https://www.npmjs.com/package/saucelabs
 [8]: https://hub.jazz.net/tutorials/basicbuild
 [9]: https://login.jazz.net/psso/proxy/jazzregister?redirect_uri=https%3A%2F%2Fhub.jazz.net%2F
+[10]: images/pipeline_tile.png
+[11]: images/testjob.png
+[12]: images/props.png
+[13]: images/speedcurve.png
+[14]: images/deployjob.png
