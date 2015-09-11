@@ -6,7 +6,7 @@ You can integrate SpeedCurve with your IBM Bluemix DevOps Services projects to i
 
 <!-- template name should match the filename, for example code_tool_track_and_plan -->
 
-##TOC
+##Table of Contents
 * [Prerequisites](#prereqs)
 * [Steps to configure](#config)
 * [Validate integration](#validate)
@@ -33,7 +33,7 @@ To get up and running with SpeedCurve and DevOps Services as quickly as possible
 
 1. On the Build & Deploy Overview page, click the Stage Configuration icon on the stage that contains the deployment job you want to test.
 2. Click **JOBS**.
-3. Click *ADD JOB** and select **Test**. 
+3. Click **ADD JOB** and select **Test**. 
 4. Under Test Command, add this command: `curl "https://api.speedcurve.com/v1/deploy" -u [your-API-key-here]:x --request POST --data note="${CF_APP}-${BUILD_NUMBER}"`
   * The `--data note=="${CF_APP}-${BUILD_NUMBER}"` argument will add the app name and the test number to your SpeedCurve dashboard.
 ![A configured test job][11]
