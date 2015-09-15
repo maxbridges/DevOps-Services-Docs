@@ -4,11 +4,10 @@ You can integrate automated functional tests that run on Sauce Labs into pipelin
 
 In this article, a Node.js app is the test target, but the steps are generally the same for other supported languages. If you have a project that already includes Sauce Labs tests, you can configure your pipeline to integrate with Sauce Labs in just a few steps.
 
-##Table of Contents 
-<!-- LWH: Is this heading from a template? Just curious, as I know we've been using the Summary of steps in the tutorials... -->
+##Summary of steps
 * [Before you begin](#prereqs)
 * [Verifying your Sauce Labs account information](#verify)
-* [Ensuring that your project has the required components](#ensure)
+* [Required components](#ensure)
 * [Configuring the pipeline](#config)
 * [Running and reviewing the tests](#run)
 
@@ -143,9 +142,7 @@ Now, whenever your pipeline runs, your Sauce Labs tests run.
 3. To view your tests on the Sauce Labs website, click the links in the logs.
 ![A test log on Sauce labs][13]
 
-**Note:** In a Node.js app that uses Mocha tests, each `describe(xxxx, function() { //tests here });` block is treated as a single job on Sauce Labs. If you want a single test to be considered as a single job, ensure that each `describe()` block contains only one test. <!--LWH: In the first sentence in this note, I wonder whether "on Sauce Labs" is correct. Should that be "by Sauce Labs"? -->
-
-<!--LWH: Are there next steps? Or is this an obvious stopping point? -->
+**Note:** In a Node.js app that uses Mocha tests, each `describe(xxxx, function() { //tests here });` block is treated as a single job by the test engine. If you want a single test to be considered as a single job, ensure that each `describe()` block contains only one test.
 
 
 [1]: https://docs.saucelabs.com/
