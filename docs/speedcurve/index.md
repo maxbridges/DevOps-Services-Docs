@@ -1,4 +1,4 @@
-#Integrating Speedcurve performance testing with Bluemix DevOps Services pipelines
+#Integrating SpeedCurve performance testing with Bluemix DevOps Services pipelines
 <!--*Max Bridges*-->
 You can integrate SpeedCurve with your IBM Bluemix DevOps Services projects to include automated web application performance tests in your deployment process. SpeedCurve offers continuous performance tests of your apps' front ends to ensure responsive, satisfying experiences for your users.
 
