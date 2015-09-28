@@ -2,6 +2,8 @@
 <!--*Max Bridges*-->
 You can integrate SpeedCurve with your IBM Bluemix DevOps Services projects to include automated web application performance tests in your deployment process. SpeedCurve offers continuous performance tests of your apps' front ends to ensure responsive, satisfying experiences for your users.
 
+<!--Notes: Use env var instead of API key in test command.-->
+
 <!--{{#template name="yourconcept_tool_yourtitle"}}-->
 
 <!-- template name should match the filename, for example code_tool_track_and_plan -->
