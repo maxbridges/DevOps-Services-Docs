@@ -26,12 +26,12 @@ Prereqs:
     3. Deploy app. (Do we need to add a deploy stage to the final version of the toolchain?)
     4. Notice the pipeline churning? That's downtime! Let's fix it. (Or something to this effect.)
 3. Expand toolchain
-    1. Add something to toolchain. Hopefully AD, but maybe Timeline Analytics? AD is possibly the better choice, but TBD for April? (Note: pipeline AD instructions are currently broken.)
+    1. Add something to toolchain. Hopefully AD, but maybe Timeline Analytics? AD is possibly the better choice, but is it TBD for April?
     2. See new tool on overview. 
 4. Modify pipeline
     1. Rename deploy stage
-    2. Add scripts for AD (I really hope to have improved integration here for April--it's quite clunky for a quick tutorial).
-    3. Briefly explain what those scripts do. 
+    2. Add jobs for AD (I really hope to have improved integration here for April--it's quite clunky for a quick tutorial).
+    3. Briefly explain what those jobs do. 
 5. Edit sample
     1. Edit static page (or maybe update routes)
     2. Commit
