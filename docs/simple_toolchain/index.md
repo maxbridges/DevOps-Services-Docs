@@ -1,6 +1,6 @@
 # Simple toolchain tutorial flow
 
-Goal: Under 15 minutes to a *basic* understanding of using toolchains with Bluemix.
+Goal: 15 minutes to a *basic* understanding of using toolchains with Bluemix.
 
 Prereqs:
 * Bluemix account
@@ -26,14 +26,14 @@ Prereqs:
     3. Deploy app. (Do we need to add a deploy stage to the final version of the toolchain?)
     4. Notice the pipeline churning? That's downtime! Let's fix it. (Or something to this effect.)
 3. Expand toolchain
-    1. Add something to toolchain. Hopefully AD, but maybe Timeline Analytics? AD is possibly the better choice, but is it TBD for April?
+    1. Add something to toolchain. Hopefully AD, but maybe Timeline Analytics?
     2. See new tool on overview. 
 4. Modify pipeline
     1. Rename deploy stage
-    2. Add jobs for AD (I really hope to have improved integration here for April--it's quite clunky for a quick tutorial).
+    2. Add jobs for AD (I hope there's improved integration in the works--a bit clunky for a quick tutorial).
     3. Briefly explain what those jobs do. 
 5. Edit sample
-    1. Edit static page (or maybe update routes)
+    1. Edit static page
     2. Commit
     3. Observe pipeline
     4. As pipeline deploy starts, have user open HelLo World page. It's up!
