@@ -38,7 +38,7 @@ Prereqs:
     1. Edit static page
     2. Commit
     3. Observe pipeline
-    4. As pipeline deploy starts, have user open HelLo World page. It's up!
+    4. As pipeline deploy starts, have user open Hello World page. It's up!
     5. Refresh page as deploy finishes to see change. 
 6. Discuss next steps with some more depth than in other docs
     1. Discuss Garage Method and link out to a **good** overview--I don't know if this truly exists, yet.
