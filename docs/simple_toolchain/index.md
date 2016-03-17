@@ -1,6 +1,7 @@
 # Simple toolchain tutorial flow
 
 Goal: 15 minutes to a *basic* understanding of using toolchains with Bluemix.
+Sample project: https://github.com/HadarH/simple-toolchain
 
 Prereqs:
 * Bluemix account
