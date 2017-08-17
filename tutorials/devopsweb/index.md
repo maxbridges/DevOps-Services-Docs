@@ -43,6 +43,7 @@ To do this tutorial, you need a Bluemix account. Bluemix accounts provide access
    </div>
 </div>
 <a name='fork'></a>
+
 ## Explore and clone the sample project
 
 1. If you want to get an idea of what the app that you are about to create is like, [see the sample app running][27]. The app analyzes Twitter users' collective sentiment about a search phrase. 
